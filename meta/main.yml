@@ -1,0 +1,15 @@
+galaxy_info:
+  author: AdopteUnOps
+  description: Install debugging and diagnostics admin tools
+  license: Apache
+
+  min_ansible_version: 2.2
+
+  platforms:
+   - name: Ubuntu
+
+  galaxy_tags:
+  - performance
+  - debugging-tools
+
+dependencies: []
