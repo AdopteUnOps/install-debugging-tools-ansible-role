@@ -1,4 +1,16 @@
 ---
+- name: ubuntu | ensuring Ubuntu universe repo is enabled ({{ ansible_distribution_version }} >= 16.04)
+  apt_repository:
+    repo: "deb http://us.archive.ubuntu.com/ubuntu {{ ansible_distribution_release|lower }} universe"
+    state: present
+  when: ansible_distribution_version >= '16.04'
+  become: yes
+
+- name: update apt cache
+  apt: update_cache=yes
+  changed_when: false
+  become: yes
+
 - name: Install performance tools
   apt: pkg={{ item }} state=present
   with_items:
